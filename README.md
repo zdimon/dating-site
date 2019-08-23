@@ -6,4 +6,6 @@
     ./manage.py migrate
     ./manage.py runserver
     
-[Modules](modules.md)
+[Modules](docs/modules.md)
+
+[Plan](docs/graph.pdf)
