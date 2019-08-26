@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Views &#8212; dating  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Dating site documentation!" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-page">
+<span id="views"></span><h1>Views<a class="headerlink" href="#module-page" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="main-page-view">
+<h2>Main page view<a class="headerlink" href="#main-page-view" title="Permalink to this headline">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">author</dt>
+<dd class="field-odd"><p><a class="reference external" href="mailto:zdimon77&#37;&#52;&#48;gmail&#46;com">zdimon77<span>&#64;</span>gmail<span>&#46;</span>com</a>.</p>
+</dd>
+</dl>
+</div>
+<span class="target" id="module-page.models"></span><dl class="class">
+<dt id="page.models.Page">
+<em class="property">class </em><code class="sig-prename descclassname">page.models.</code><code class="sig-name descname">Page</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#page.models.Page" title="Permalink to this definition">¶</a></dt>
+<dd><p>Page model</p>
+<dl class="exception">
+<dt id="page.models.Page.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#page.models.Page.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="exception">
+<dt id="page.models.Page.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#page.models.Page.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="page.models.Page.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#page.models.Page.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="page.models.Page.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#page.models.Page.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="page.models.Page.title">
+<code class="sig-name descname">title</code><a class="headerlink" href="#page.models.Page.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-page.views"></span><dl class="function">
+<dt id="page.views.index">
+<code class="sig-prename descclassname">page.views.</code><code class="sig-name descname">index</code><span class="sig-paren">(</span><em class="sig-param">request</em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#page.views.index" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Main page</p>
+<p>Keyword arguments:</p>
+<p>…code:</p>
+<blockquote>
+<div><p>code</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">param <cite>*args</cite></dt>
+<dd class="field-odd"><p>The variable arguments are used for …</p>
+</dd>
+<dt class="field-even">param <cite>**kwargs</cite></dt>
+<dd class="field-even"><p>The keyword arguments are used for …</p>
+</dd>
+</dl>
+<p>&#64;param script: Script to check whether running</p>
+<p>TODO: Add condition for when val is None</p>
+</div></blockquote>
+<dl class="simple">
+<dt>says_str<span class="classifier">str</span></dt><dd><p>a formatted string to print out what the animal says</p>
+</dd>
+<dt>name<span class="classifier">str</span></dt><dd><p>the name of the animal</p>
+</dd>
+<dt>sound<span class="classifier">str</span></dt><dd><p>the sound that the animal makes</p>
+</dd>
+<dt>num_legs<span class="classifier">int</span></dt><dd><p>the number of legs the animal has (default 4)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>says(sound=None)</dt><dd><p>Prints the animals name and what sound it makes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="page.views.enumerate">
+<code class="sig-prename descclassname">page.views.</code><code class="sig-name descname">enumerate</code><span class="sig-paren">(</span><em class="sig-param">sequence</em><span class="optional">[</span>, <em class="sig-param">start=0</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#page.views.enumerate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an iterator that yields tuples of an index and an item of the
+<em>sequence</em>. (And so on.)</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">dating</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#main-page-view">Main page view</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="previous chapter">Dating site documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Dima.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/modules/views.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
