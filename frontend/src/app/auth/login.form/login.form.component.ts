@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../service/login.service';
+import { FacadeService } from '../../facade';
 
 @Component({
   selector: 'app-login.form',
@@ -9,8 +9,8 @@ import { LoginService } from '../../service/login.service';
 export class LoginFormComponent implements OnInit {
 
   user: any;
- 
-  constructor(private _loginService: LoginService) { }
+
+  constructor(public _facadeService: FacadeService) { }
 
   ngOnInit() {
     this.user = {
@@ -20,12 +20,12 @@ export class LoginFormComponent implements OnInit {
   }
 
   login(){
-    this._loginService.login({'username': this.user.username, 'password': this.user.password});
+    this._facadeService.loginService.login({'username': this.user.username, 'password': this.user.password});
   }
   logout(){
-    this._loginService.logout();
+    this._facadeService.loginService.logout();
   }
   refreshToken() {
-    this._loginService.refreshToken();
+    this._facadeService.loginService.refreshToken();
   }
 }

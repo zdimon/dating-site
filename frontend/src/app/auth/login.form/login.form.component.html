@@ -1,28 +1,30 @@
 <h2>Log In</h2>
-<div class="row" *ngIf="!_loginService.token">
+<div class="row" *ngIf="!_facadeService.loginService.token">
   <div class="col-sm-4">
     <label>Username:</label><br />
     <input class="form-control" type="text" name="login-username" [(ngModel)]="user.username">
-    <span *ngFor="let error of _loginService.errors.username"><br />
+    <span *ngFor="let error of _facadeService.loginService.errors.username"><br />
     {{ error }}</span></div>
   <div class="col-sm-4">
     <label>Password:</label><br />
     <input  class="form-control"  type="password" name="login-password" [(ngModel)]="user.password">
-    <span *ngFor="let error of _loginService.errors.password"><br />
+    <span *ngFor="let error of _facadeService.loginService.errors.password"><br />
     {{ error }}</span>
   </div>
   <div class="col-sm-4">
     <button (click)="login()" class="btn btn-primary">Log In</button>
   </div>
   <div class="col-sm-12">
-    <span *ngFor="let error of _loginService.errors.non_field_errors">{{ error }}<br /></span>
+    <span *ngFor="let error of _facadeService.loginService.errors.non_field_errors">{{ error }}<br /></span>
   </div>
 </div>
-<div class="row" *ngIf="_loginService.token">
-  <div class="col-sm-12">You are logged in as {{ _loginService.username }}.<br />
-    Token Expires: {{ _loginService.token_expires }}<br />
+
+<div class="row" *ngIf="_facadeService.loginService.token">
+  <div class="col-sm-12">You are logged in as {{ _facadeService.loginService.username }}.<br />
+    Token Expires: {{ _facadeService.loginService.token_expires }}<br />
     <button (click)="refreshToken()" class="btn btn-primary">Refresh Token</button>
     <button (click)="logout()" class="btn btn-primary">Log Out</button>
   </div>
 </div>
+
 
