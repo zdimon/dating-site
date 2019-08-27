@@ -11,8 +11,13 @@ Dating site documentation!
    :caption: Contents:
 
    modules/views.rst
+   modules/model.rst
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Agency:
 
+   modules/model.rst
 
 Indices and tables
 ==================
