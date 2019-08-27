@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SocketService } from '../service/socket.service';
 
 @Component({
   selector: 'app-index',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+  constructor(private socket_service: SocketService) { }
 
   ngOnInit() {
+    this.socket_service.connect_me();
   }
 
+  onClick() {
+    this.socket_service.connect_me();
+  }
 }

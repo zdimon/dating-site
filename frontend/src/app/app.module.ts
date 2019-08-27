@@ -12,8 +12,14 @@ import { IndexComponent } from './index/index.component';
 import { AuthModule } from './auth/auth.module';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { FacadeService } from './facade';
-import { APP_CONFIG, config, SettingClass } from './settings';
+import { APP_CONFIG, SettingClass } from './settings';
 import { InitService } from './service/init.service';
+
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
+const config: SocketIoConfig = { url: 'localhost:8888/websocket', options: {} };
+
+
 
 export function init_app(init_service: InitService) {
   return () => init_service.init();
@@ -31,7 +37,8 @@ export function init_app(init_service: InitService) {
     HttpClientModule,
     BrowserAnimationsModule,
     AuthModule,
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    SocketIoModule.forRoot(config)
   ],
   providers: [LoginService,FacadeService,InitService,
   {

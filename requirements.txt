@@ -5,3 +5,10 @@ bs4
 djangorestframework
 djangorestframework-jwt
 django-cors-headers
+django-redis-sessions
+tornado==6.0.3
+tornado-redis
+python-socketio
+eventlet
+aiohttp
+aioredis
