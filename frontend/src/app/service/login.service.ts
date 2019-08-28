@@ -29,7 +29,12 @@ export class LoginService {
     this.http.post('http://localhost:8000/api-token-auth/', JSON.stringify(user), this.httpOptions).subscribe(
       data => {
         this.updateData(data['token']);
-        localStorage.setItem('access_token', data['token']);
+        localStorage.setItem('access_token', data['token']); 
+        const token_parts = data['token'].split(/\./);
+        const token_decoded = JSON.parse(window.atob(token_parts[1]));
+        //this.token_expires = new Date(token_decoded.exp * 1000);
+        let username = token_decoded.username;
+        console.log(username);
       },
       err => {
         this.errors = err['error'];
@@ -55,6 +60,7 @@ export class LoginService {
     this.token_expires = null;
     this.username = null;
     localStorage.removeItem('access_token');
+    localStorage.setItem('is_auth', 'false');
   }
 
   private updateData(token) {

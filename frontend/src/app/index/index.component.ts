@@ -12,6 +12,10 @@ export class IndexComponent implements OnInit {
 
   ngOnInit() {
     this.socket_service.connect_me();
+    this.socket_service.currentDocument.subscribe(data => {
+      console.log(data);
+      console.log('fireeeeee')
+    })
   }
 
   onClick() {
