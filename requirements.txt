@@ -6,7 +6,7 @@ djangorestframework
 djangorestframework-jwt
 django-cors-headers
 django-redis-sessions
-tornado==6.0.3
+tornado==6.3.3
 tornado-redis
 python-socketio
 eventlet
